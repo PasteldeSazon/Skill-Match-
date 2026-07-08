@@ -1,45 +1,7 @@
-const candidatoOriginal = {
-  nome: "nome",
-  idade: "idade",
-  area: "area",
-  habilidades: "",
-  experienciaMeses: "experienciaMeses",
-};
+import dados from "./dados.js";
+import { listaVagas as vagasImportadas } from "./listaVagas.js";
 
-// Controle global de saída no console. Defina `true` para suprimir logs de listagem.
-
-// Lista de vagas do sistema (RF02) -- array de objetos que descrevem cada vaga.
-// Cada objeto deve conter: id, empresa, cargo, requisitos (array), salario e modalidade.
-const listaVagas = [
-  {
-    id: 1,
-    empresa: "Tech Solutions",
-    cargo: "Desenvolvedor Back-End Júnior",
-    requisitos: ["JavaScript", "Node.js", "SQL"],
-    salario: 4800,
-    modalidade: "Presencial",
-  },
-  {
-    id: 2,
-    empresa: "InovaTech",
-    cargo: "Desenvolvedor Back-End Pleno",
-    requisitos: ["JavaScript", "Node.js", "Docker", "React"],
-    salario: 7000,
-    modalidade: "Remoto",
-  },
-  {
-    id: 3,
-    empresa: "CodeMasters",
-    cargo: "Desenvolvedor Back-End Sênior",
-    requisitos: ["JavaScript", "Node.js", "Docker", "Kubernetes"],
-    salario: 11000,
-    modalidade: "Híbrido",
-  },
-];
-
-// 2. Classes (Com iniciais maiúsculas para evitar conflito de escopo)
-// `Vaga` representa o modelo de uma vaga (RF09). Usamos classes para demonstrar POO.
-class Vaga {
+export class Vaga {
   constructor(cargo, salario, requisitos, modalidade, id = null) {
     this.id = id;
     this.cargo = cargo;
@@ -49,8 +11,7 @@ class Vaga {
   }
 }
 
-// Classe simples para representar o candidato (objeto de domínio - RF01).
-class Candidato {
+export class Candidato {
   constructor(nome, idade, area, habilidades, experienciaMeses) {
     this.nome = nome;
     this.idade = idade;
@@ -60,18 +21,31 @@ class Candidato {
   }
 }
 
-// Exemplo de herança (RF10): VagaFrontEnd estende Vaga e adiciona `nivel`.
-class VagaFrontEnd extends Vaga {
+export class VagaFrontEnd extends Vaga {
   constructor(cargo, empresa, requisitos, salario, modalidade, nivel) {
     super(cargo, salario, requisitos, modalidade);
     this.empresa = empresa;
     this.nivel = nivel;
   }
-  // Método que demonstra o uso de `this` (RF11).
+
   exibirNivel() {
-    return `Nivel da vaga: ${this.nivel}`;
+    return `Nível da vaga: ${this.nivel}`;
   }
 }
+
+export const candidatoOriginal = {
+  nome: "nome",
+  idade: "idade",
+  area: "area",
+  habilidades: "",
+  experienciaMeses: "experienciaMeses",
+};
+
+// Lista de vagas importadas de listaVagas.js (RF02)
+export const listaVagas = vagasImportadas;
+
+
+
 
 // Mostrar listagem de vagas (true = suprimir listagem inicial)
 const SILENT = false;
@@ -150,17 +124,17 @@ function avaliarCandidato(candidatoObjeto, vagaObjeto, exibirLogs = true) {
 }
 
 // 4. Criação do objeto (instância do candidato) — exemplo preenchido (RF01).
-const novoCandidato = new Candidato(
-  "Carlos Pereira",
-  36,
-  "Desenvolvimento Front-End",
-  ["HTML", "CSS", "JavaScript"],
-  24,
-);
+// const novoCandidato = new Candidato(
+//   "Carlos Pereira",
+//   36,
+//   "Desenvolvimento Front-End",
+//   ["HTML", "CSS", "JavaScript"],
+//   24,
+// );
 
-console.log(
-  `Candidato: ${novoCandidato.nome}, ${novoCandidato.idade} anos, área: ${novoCandidato.area}, habilidades: ${novoCandidato.habilidades.join(", ")}, experiência: ${novoCandidato.experienciaMeses} meses.`,
-);
+// console.log(
+//   `Candidato: ${novoCandidato.nome}, ${novoCandidato.idade} anos, área: ${novoCandidato.area}, habilidades: ${novoCandidato.habilidades.join(", ")}, experiência: ${novoCandidato.experienciaMeses} meses.`,
+// );
 
 // Função utilitária para aguardar um tempo (retorna Promise) — usada para simular latência.
 function aguardar(ms) {
@@ -226,42 +200,18 @@ function criarContadorDeAnalises() {
 
 const contarAnalise = criarContadorDeAnalises();
 
-// IIFE (immediately-invoked function expression) assíncrona para iniciar o fluxo
-// principal do script: inicia a análise do candidato usando as funções implementadas.
-(async () => {
-  console.log(
-    `Iniciando análise de ${novoCandidato.nome} para as vagas disponíveis...`,
-  );
-  const melhorVaga = await executarAnalise(novoCandidato);
-
-  finalizarAnalise(novoCandidato.nome, (nome) => {
-    console.log(
-      `Notificação: análise de ${nome} concluída. Melhor vaga: ${melhorVaga.vaga.cargo} na empresa ${melhorVaga.vaga.empresa}, com ${melhorVaga.resultadoVaga.toFixed(2)}% dos requisitos atendidos.`,
-    );
-    // opcional: mostrar logs detalhados da melhor vaga
-    avaliarCandidato(novoCandidato, melhorVaga.vaga, true);
-    recomendacaoVaga(melhorVaga.vaga, melhorVaga.resultadoVaga);
-  });
-})();
-
 // Gera uma recomendação final com base na % de aderência (RF07/RF04).
 function recomendacaoVaga(vaga, resultadoVaga) {
   if (resultadoVaga >= 80) {
-    console.log(
-      "Recomendação: O candidato é altamente recomendado para esta vaga.",
-    );
+    return "🟢 Altamente recomendado para esta vaga.";
   } else if (resultadoVaga >= 50) {
-    console.log(
-      "Recomendação: O candidato é recomendado para esta vaga, mas pode precisar de desenvolvimento em algumas áreas.",
-    );
+    return "🟡 Recomendado, mas pode precisar de desenvolvimento em algumas áreas.";
   } else {
-    console.log(
-      "Recomendação: O candidato não atende a maioria dos requisitos para esta vaga.",
-    );
+    return "🔴 Não atende a maioria dos requisitos para esta vaga.";
   }
 }
 
-// / Função que demonstra o uso de callback (RF12).
+// Função que demonstra o uso de callback (RF12).
 function finalizarAnalise(nomeCandidato, callback) {
   console.log("Análise finalizada.");
   callback(nomeCandidato);
@@ -275,7 +225,6 @@ export default {
   VagaFrontEnd,
   SILENT,
   PRINT_PER_VAGA,
-  novoCandidato,
   avaliarCandidato,
   aguardar,
   buscarVagasSimuladas,
