@@ -1,0 +1,21 @@
+{
+  "name": "skill-match-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "motor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PasteldeSazon/Skill-Match-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/PasteldeSazon/Skill-Match-/issues"
+  },
+  "homepage": "https://github.com/PasteldeSazon/Skill-Match-#readme"
+}
