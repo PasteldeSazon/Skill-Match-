@@ -52,6 +52,11 @@ form > p {
   color: #666;
 }
 
+.melhor-vaga {
+    box-shadow: 0 0 15px gold;
+    transform: scale(1.02);
+}
+
 /* ==========================================
    Labels e Campos
 ========================================== */

@@ -4,20 +4,34 @@
 
 // 1. Carrega as vagas do arquivo vagas.json com tratamento de 3 estados
 // Estados: carregando, sucesso, erro
-async function carregarVagas() {
+const status = document.getElementById("status");
+
+ export async function carregarVagas() {
+  status.textContent = "Carregando vagas...";
+
   try {
-    console.log("📥 Carregando vagas...");
-    const resposta = await fetch("../../assets/dados/vagas.json");
+    const resposta = await fetch("./assets/dados/vagas.json");
 
     if (!resposta.ok) {
-      throw new Error(`Erro HTTP: ${resposta.status}`);
+      throw new Error("Erro ao carregar arquivo.");
     }
 
     const vagas = await resposta.json();
-    console.log("✅ Vagas carregadas com sucesso!");
-    return vagas;
+
+    if (vagas.length === 0) {
+      status.textContent = "Nenhuma vaga encontrada.";
+      return [];
+    }
+
+    status.textContent = "";
+
+    return vagas; // <-- Faltava isso
+
   } catch (erro) {
-    console.error("❌ Erro ao carregar vagas:", erro.message);
+    status.textContent = "Erro ao carregar as vagas.";
+
+    console.error(erro);
+
     return [];
   }
 }
@@ -72,4 +86,3 @@ export default {
   carregarPerfilLocalStorage,
   limparPerfil,
 };
-

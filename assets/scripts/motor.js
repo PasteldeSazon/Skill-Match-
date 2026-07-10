@@ -68,14 +68,14 @@ if (!SILENT) {
 // Esta função compara as habilidades do candidato com os requisitos da vaga
 // e retorna o percentual de compatibilidade (RF03). Ela também pode imprimir
 // informações detalhadas quando `exibirLogs` está true.
-function avaliarCandidato(candidatoObjeto, vagaObjeto, exibirLogs = true) {
+export function avaliarCandidato(candidatoObjeto, vagaObjeto, exibirLogs = true) {
   // Encontra quais requisitos o candidato TEM (Atendidos) usando `filter` (RF08).
-  const habilidadesCorrespondentes = vagaObjeto.requisitos.filter((requisito) =>
+   const habilidadesCorrespondentes = vagaObjeto.requisitos.filter((requisito) =>
     candidatoObjeto.habilidades.includes(requisito),
   );
 
   // Encontra quais requisitos o candidato NÃO TEM (Não encontrados).
-  const habilidadesFaltantes = vagaObjeto.requisitos.filter(
+   const habilidadesFaltantes = vagaObjeto.requisitos.filter(
     (requisito) => !candidatoObjeto.habilidades.includes(requisito),
   );
 
@@ -119,8 +119,12 @@ function avaliarCandidato(candidatoObjeto, vagaObjeto, exibirLogs = true) {
     console.log("---------------------------------------");
   }
 
-  // Retorna apenas o percentual (valor numérico) para uso em comparações.
-  return percentualAtendimento;
+  return {
+  percentualAtendimento,
+  classificacao,
+  habilidadesCorrespondentes,
+  habilidadesFaltantes,
+};
 }
 
 // 4. Criação do objeto (instância do candidato) — exemplo preenchido (RF01).
