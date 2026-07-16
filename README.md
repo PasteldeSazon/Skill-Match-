@@ -1,131 +1,163 @@
-# SkillMatch++
+# 🚀 SkillMatch – Sistema Inteligente de Compatibilidade entre Candidatos e Vagas
 
-Uma plataforma web inovadora que conecta profissionais de tecnologia com oportunidades de trabalho baseada na compatibilidade de habilidades.
+## 📖 Sobre o projeto
 
-## 🎯 Objetivo
+O **SkillMatch** é uma aplicação web desenvolvida em **HTML5, CSS3 e JavaScript puro (ES Modules)** com o objetivo de analisar o perfil de um candidato e identificar as vagas de emprego mais compatíveis com suas habilidades.
 
-O SkillMatch++ resolve o problema de desajuste entre habilidades do candidato e requisitos da vaga. Ao preencher um perfil com nome, área de atuação e habilidades, o sistema calcula automaticamente a compatibilidade com todas as vagas disponíveis, recomendando quais aprender para melhorar as chances.
+O sistema recebe as informações preenchidas pelo usuário em um formulário, compara essas informações com os requisitos disponíveis em um catálogo de vagas e apresenta as oportunidades mais compatíveis, indicando a porcentagem de compatibilidade, as habilidades atendidas, as habilidades que ainda precisam ser desenvolvidas e uma recomendação personalizada para cada vaga.
 
-## 🚀 Como Executar
+Este projeto foi desenvolvido como atividade prática do curso, aplicando conceitos fundamentais de desenvolvimento Front-end utilizando apenas tecnologias nativas da Web, sem frameworks ou bibliotecas externas.
 
-### Pré-requisitos
-- Navegador moderno (Chrome, Firefox, Safari, Edge)
-- Live Server ou servidor local (necessário para módulos ES6 e fetch)
+---
 
-### Passos
+# 🎯 Objetivos
 
-1. **Abra com Live Server**
-   - No VS Code: clique com botão direito em `index.html` → "Open with Live Server"
-   - Ou acesse `http://localhost:5500/` (porta pode variar)
+* Aplicar conceitos de HTML semântico e acessível.
+* Desenvolver interfaces responsivas utilizando CSS.
+* Utilizar JavaScript moderno com ES Modules.
+* Trabalhar com Programação Orientada a Objetos (POO).
+* Consumir dados externos utilizando Fetch API.
+* Persistir informações utilizando LocalStorage.
+* Desenvolver lógica de compatibilidade entre candidatos e vagas.
+* Organizar o código de forma modular e reutilizável.
 
-2. **Preencha o formulário**
-   - Nome, email, telefone, idade
-   - Selecione sua área e habilidades
-   - Clique em "Gerar perfil"
+---
 
-3. **Veja as vagas recomendadas**
-   - Os cards aparecem ordenados por compatibilidade
-   - Score visual com cores (verde, amarelo, vermelho)
-   - Recomendações personalizadas por vaga
+# ✨ Funcionalidades
 
-## 🛠️ Tecnologias Utilizadas
+* Cadastro de candidato através de formulário.
+* Validação completa dos campos.
+* Carregamento das vagas através de arquivo JSON utilizando Fetch API.
+* Tratamento dos estados de carregamento, erro e lista vazia.
+* Cálculo automático da compatibilidade entre candidato e vaga.
+* Exibição das três vagas mais compatíveis.
+* Classificação automática da compatibilidade.
+* Exibição das habilidades atendidas.
+* Exibição das habilidades que ainda precisam ser desenvolvidas.
+* Recomendações de estudo para aumentar as chances de contratação.
+* Armazenamento do perfil do candidato utilizando LocalStorage.
+* Interface responsiva para dispositivos móveis e desktop.
 
-### Frontend
-- **HTML5** - Semântico com landmarks (`<header>`, `<main>`, `<footer>`)
-- **CSS3** - Flexbox, Grid, media queries, mobile-first
-- **JavaScript ES6+** - Módulos, Classes, Promises, async/await
+---
 
-### Arquitetura Modular
-- `motor.js` - Lógica: Classes (Vaga, Candidato), cálculo de compatibilidade
-- `ui.js` - Interface: Renderização dinâmica, validação, eventos
-- `dados.js` - Dados: Persistência (localStorage), estado
-- `main.js` - Orquestrador: Coordena os módulos
-- `vagas.json` - Catálogo de vagas
+# 🛠 Tecnologias utilizadas
 
-## 📋 Requisitos Implementados (PDF)
+* HTML5
+* CSS3
+* JavaScript (ES6+)
+* Fetch API
+* LocalStorage
+* JSON
+* Git
+* GitHub
 
-### Grupo A: Motor (RF01-RF08, RF13)
-- ✅ RF01: Classe Candidato com atributos
-- ✅ RF03: Cálculo de compatibilidade em %
-- ✅ RF04: Classificação (Alta/Média/Baixa)
-- ✅ RF08: Método filter() para requisitos
-- ✅ RF13: Closure para contar análises
+---
 
-### Grupo B: Interface (RF02, RF05-RF07, RF11, RF12)
-- ✅ RF02: Form com múltiplos campos
-- ✅ RF05: Sugestões de habilidades a aprender
-- ✅ RF07: Recomendação final
-- ✅ RF11: Método exibirNivel() com this
-- ✅ RF12: Callback em finalizarAnalise()
+# 📚 Conceitos de JavaScript aplicados
 
-### Grupo C: Dados (RF14)
-- ✅ RF14: Fetch com 3 estados (loading/success/error)
-- ✅ RF14: localStorage com JSON
+Durante o desenvolvimento foram utilizados diversos conceitos estudados ao longo do curso, entre eles:
 
-### Grupo D: Organização (RF09, RF10, RF15, RF16)
-- ✅ RF09: Classes Vaga e VagaFrontEnd
-- ✅ RF10: Herança (VagaFrontEnd extends Vaga)
-- ✅ RF15: ES6 modules
-- ✅ RF16: Clean code
+* Manipulação do DOM
+* Eventos
+* Funções
+* Arrow Functions
+* Template Literals
+* Objetos
+* Arrays
+* Métodos de Array (`map`, `filter`, `sort`, `slice`)
+* Callback Functions
+* Closure
+* Programação Orientada a Objetos
+* Classes
+* Herança
+* Encapsulamento
+* ES Modules (`import` e `export`)
+* Fetch API
+* Tratamento de erros (`try/catch`)
+* LocalStorage
+* JSON
 
-## 📂 Estrutura do Projeto
+---
 
-```
-Skill-Match-/
-├── index.html              # Página principal com formulário
-├── assets/
-│   ├── styles/
-│   │   └── style.css       # Estilos responsivos
-│   ├── dados/
-│   │   └── vagas.json      # Catálogo de vagas
-│   └── scripts/
-│       ├── motor.js        # Lógica principal
-│       ├── ui.js           # Interface
-│       ├── dados.js        # Dados e persistência
-│       └── main.js         # Orquestrador
-└── README.md               # Este arquivo
-```
+# 🧠 Funcionamento da análise
 
-## 🎨 Design
+O sistema realiza uma comparação entre as habilidades informadas pelo candidato e os requisitos de cada vaga disponível.
 
-- **Mobile-First**: Desenvolvido para mobile, escalando para tablet e desktop
-- **Responsivo**: Media queries em 640px e 1024px
-- **Acessível**: Suporte a focus states, aria-labels
-- **Performance**: CSS otimizado, sem frameworks
+Para cada vaga são calculados:
 
-## 💾 Persistência de Dados
+* Percentual de compatibilidade.
+* Quantidade de requisitos atendidos.
+* Habilidades encontradas.
+* Habilidades faltantes.
+* Classificação da compatibilidade.
+* Recomendação personalizada.
 
-Os dados do candidato são salvos em localStorage com a seguinte estrutura:
+Após todos os cálculos, as vagas são ordenadas pela porcentagem de compatibilidade e são apresentadas ao usuário as três melhores oportunidades.
 
-```javascript
-{
-  nome: "João Silva",
-  email: "joao@example.com",
-  telefone: "(11) 98765-4321",
-  idade: 28,
-  area: "Desenvolvimento Back-End",
-  habilidades: ["JavaScript", "Node.js", "SQL"],
-  experiencia: 36
-}
-```
+---
 
-## 🔄 Fluxo de Dados
+---
 
-1. Usuário preenche formulário
-2. Validação de dados
-3. Criação de objeto Candidato
-4. Salvamento em localStorage
-5. Cálculo de compatibilidade com cada vaga
-6. Ordenação por score
-7. Renderização de cards com recomendações
+# ▶️ Como executar
 
-## 🧪 Testando
+1. Faça o download ou clone este repositório.
 
-Para testar a aplicação:
+2. Abra o projeto no Visual Studio Code.
 
-1. Abra em Live Server
-2. Preencha o formulário com dados válidos
-3. Selecione pelo menos uma habilidade
-4. Clique "Gerar perfil"
-5. Observe os cards de vagas com scores
-6. Verifique localStorage (DevTools → Application → Local Storage)
+3. Instale a extensão **Live Server**.
+
+4. Clique com o botão direito no arquivo **index.html**.
+
+5. Selecione **Open with Live Server**.
+
+6. Preencha o formulário e realize a análise das vagas.
+
+---
+
+# 💾 Persistência de dados
+
+O perfil do candidato é armazenado utilizando o **LocalStorage**, permitindo que as informações sejam recuperadas posteriormente mesmo após atualizar a página.
+
+---
+
+# 📱 Responsividade
+
+A interface foi desenvolvida seguindo o conceito **Mobile First**, adaptando automaticamente o layout para diferentes tamanhos de tela, proporcionando uma boa experiência tanto em dispositivos móveis quanto em computadores.
+
+---
+
+# 📌 Organização do código
+
+O projeto foi dividido em módulos para facilitar a manutenção e reutilização do código.
+
+* **main.js** — inicialização da aplicação.
+* **ui.js** — interface e manipulação do DOM.
+* **motor.js** — regras de negócio e cálculo da compatibilidade.
+* **dados.js** — carregamento dos dados e manipulação do LocalStorage.
+
+---
+
+# 📖 Aprendizados
+
+Durante o desenvolvimento deste projeto foi possível aplicar diversos conceitos fundamentais do desenvolvimento Front-end, principalmente organização de código, modularização, manipulação do DOM, programação orientada a objetos, consumo de APIs utilizando Fetch e persistência de dados com LocalStorage.
+
+Além do desenvolvimento técnico, o projeto proporcionou uma melhor compreensão sobre organização de projetos, versionamento com Git e boas práticas de programação.
+
+---
+
+# 🚀 Melhorias futuras
+
+* Adicionar filtros por área de atuação.
+* Implementar busca por palavra-chave.
+* Adicionar tema claro e escuro.
+* Exibir gráficos com estatísticas do candidato.
+* Permitir cadastro de novas vagas pela interface.
+* Gerar relatório em PDF com os resultados da análise.
+
+---
+
+# 👨‍💻 Autor
+
+**Gabriel Passos**
+
+Projeto desenvolvido como atividade prática do curso, aplicando os conhecimentos adquiridos durante as aulas de HTML, CSS e JavaScript.

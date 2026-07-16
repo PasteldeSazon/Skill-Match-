@@ -16,383 +16,361 @@
       <p>Conectando profissionais com oportunidades</p>
     </header>
     <main>
-    <form action="" id="form">
-      <p>
-        Antes de tudo precisamos saber quem tu é, por isso, deixe suas
-        informaçoes neste formulário para poder dar continuidade em nosso
-        SkillMatch++
-      </p>
-      <label for="nome">Seu nome</label>
-      <input
-        type="text"
-        id="nome"
-        name="nome"
-        placeholder="Deixe aqui seu nome completo"
-        required
-      />
-      
-      
-      <label for="email">Seu email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Exemplode@email.com"
-        required
-      />
-      
-      <label for="telefone">Seu telefone</label>
-      <input
-        type="tel"
-        id="telefone"
-        name="telefone"
-        placeholder="(12) 34567-8910 "
-        required
-      />
-      
-      <label for="idade">Qual sua idade?</label>
-      <input type="number" id="idade" name="idade" required />
-      
-      <label for="area">Qual é/era sua área?</label>
-      <input
-        list="areas"
-        id="area"
-        name="area"
-        placeholder="Selecione ou digite sua área"
-        required
-      />
+      <form action="" id="form">
+        <p>
+          Antes de tudo precisamos saber quem tu é, por isso, deixe suas
+          informaçoes neste formulário para poder dar continuidade em nosso
+          SkillMatch++
+        </p>
+        <label for="nome">Seu nome</label>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Deixe aqui seu nome completo"
+          autocomplete="name"
+        />
 
-      <datalist id="areas" required>
-        <option value="Desenvolvimento Front-End"></option>
-        <option value="Desenvolvimento Back-End"></option>
-        <option value="UX/UI Design"></option>
-        <option value="Data Science"></option>
-        <option value="Gestão de Projetos"></option>
-        <option value="Marketing Digital"></option>
-        <option value="Recursos Humanos"></option>
-        <option value="Outro"></option>
-      </datalist>
+        <label for="email">Seu email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Exemplode@email.com"
+          autocomplete="email"
+        />
 
-      <fieldset>
-        <legend required>Quais são suas habilidades?</legend>
+        <label for="telefone">Seu telefone</label>
+        <input
+          type="tel"
+          id="telefone"
+          name="telefone"
+          placeholder="(12) 34567-8910 "
+          autocomplete="tel"
+        />
 
-        <label for="habilidade-html">
-          <input
-            type="checkbox"
-            id="habilidade-html"
-            name="habilidades"
-            value="HTML"
-          />
-          HTML
-        </label>
-        
+        <label for="idade">Qual sua idade?</label>
+        <input type="number" id="idade" name="idade" />
 
-        <label for="habilidade-css">
-          <input
-            type="checkbox"
-            id="habilidade-css"
-            name="habilidades"
-            value="CSS"
-          />
-          CSS
-        </label>
-        
+        <label for="area">Qual é/era sua área?</label>
+        <input
+          list="areas"
+          id="area"
+          name="area"
+          placeholder="Selecione ou digite sua área"
+        />
 
-        <label for="habilidade-js">
-          <input
-            type="checkbox"
-            id="habilidade-js"
-            name="habilidades"
-            value="JavaScript"
-          />
-          JavaScript
-        </label>
-        
+        <datalist id="areas">
+          <option value="Desenvolvimento Front-End"></option>
+          <option value="Desenvolvimento Back-End"></option>
+          <option value="UX/UI Design"></option>
+          <option value="Data Science"></option>
+          <option value="Gestão de Projetos"></option>
+          <option value="Marketing Digital"></option>
+          <option value="Recursos Humanos"></option>
+          <option value="Outro"></option>
+        </datalist>
 
-        <label for="habilidade-typescript">
-          <input
-            type="checkbox"
-            id="habilidade-typescript"
-            name="habilidades"
-            value="TypeScript"
-          />
-          TypeScript
-        </label>
-        
+        <fieldset>
+          <legend>Quais são suas habilidades?</legend>
 
-        <label for="habilidade-react">
-          <input
-            type="checkbox"
-            id="habilidade-react"
-            name="habilidades"
-            value="React"
-          />
-          React
-        </label>
-        
+          <label for="habilidade-html">
+            <input
+              type="checkbox"
+              id="habilidade-html"
+              name="habilidades"
+              value="HTML"
+            />
+            HTML
+          </label>
 
-        <label for="habilidade-vue">
-          <input
-            type="checkbox"
-            id="habilidade-vue"
-            name="habilidades"
-            value="Vue.js"
-          />
-          Vue.js
-        </label>
-        
+          <label for="habilidade-css">
+            <input
+              type="checkbox"
+              id="habilidade-css"
+              name="habilidades"
+              value="CSS"
+            />
+            CSS
+          </label>
 
-        <label for="habilidade-node">
-          <input
-            type="checkbox"
-            id="habilidade-node"
-            name="habilidades"
-            value="Node.js"
-          />
-          Node.js
-        </label>
-        
+          <label for="habilidade-js">
+            <input
+              type="checkbox"
+              id="habilidade-js"
+              name="habilidades"
+              value="JavaScript"
+            />
+            JavaScript
+          </label>
 
-        <label for="habilidade-express">
-          <input
-            type="checkbox"
-            id="habilidade-express"
-            name="habilidades"
-            value="Express.js"
-          />
-          Express.js
-        </label>
-        
+          <label for="habilidade-typescript">
+            <input
+              type="checkbox"
+              id="habilidade-typescript"
+              name="habilidades"
+              value="TypeScript"
+            />
+            TypeScript
+          </label>
 
-        <label for="habilidade-python">
-          <input
-            type="checkbox"
-            id="habilidade-python"
-            name="habilidades"
-            value="Python"
-          />
-          Python
-        </label>
-        
+          <label for="habilidade-react">
+            <input
+              type="checkbox"
+              id="habilidade-react"
+              name="habilidades"
+              value="React"
+            />
+            React
+          </label>
 
-        <label for="habilidade-java">
-          <input
-            type="checkbox"
-            id="habilidade-java"
-            name="habilidades"
-            value="Java"
-          />
-          Java
-        </label>
-        
+          <label for="habilidade-vue">
+            <input
+              type="checkbox"
+              id="habilidade-vue"
+              name="habilidades"
+              value="Vue.js"
+            />
+            Vue.js
+          </label>
 
-        <label for="habilidade-csharp">
-          <input
-            type="checkbox"
-            id="habilidade-csharp"
-            name="habilidades"
-            value="C#"
-          />
-          C#
-        </label>
-        
+          <label for="habilidade-node">
+            <input
+              type="checkbox"
+              id="habilidade-node"
+              name="habilidades"
+              value="Node.js"
+            />
+            Node.js
+          </label>
 
-        <label for="habilidade-php">
-          <input
-            type="checkbox"
-            id="habilidade-php"
-            name="habilidades"
-            value="PHP"
-          />
-          PHP
-        </label>
-        
+          <label for="habilidade-express">
+            <input
+              type="checkbox"
+              id="habilidade-express"
+              name="habilidades"
+              value="Express.js"
+            />
+            Express.js
+          </label>
 
-        <label for="habilidade-sql">
-          <input
-            type="checkbox"
-            id="habilidade-sql"
-            name="habilidades"
-            value="SQL"
-          />
-          SQL
-        </label>
-        
+          <label for="habilidade-python">
+            <input
+              type="checkbox"
+              id="habilidade-python"
+              name="habilidades"
+              value="Python"
+            />
+            Python
+          </label>
 
-        <label for="habilidade-mysql">
-          <input
-            type="checkbox"
-            id="habilidade-mysql"
-            name="habilidades"
-            value="MySQL"
-          />
-          MySQL
-        </label>
-        
+          <label for="habilidade-java">
+            <input
+              type="checkbox"
+              id="habilidade-java"
+              name="habilidades"
+              value="Java"
+            />
+            Java
+          </label>
 
-        <label for="habilidade-postgresql">
-          <input
-            type="checkbox"
-            id="habilidade-postgresql"
-            name="habilidades"
-            value="PostgreSQL"
-          />
-          PostgreSQL
-        </label>
-        
+          <label for="habilidade-csharp">
+            <input
+              type="checkbox"
+              id="habilidade-csharp"
+              name="habilidades"
+              value="C#"
+            />
+            C#
+          </label>
 
-        <label for="habilidade-mongodb">
-          <input
-            type="checkbox"
-            id="habilidade-mongodb"
-            name="habilidades"
-            value="MongoDB"
-          />
-          MongoDB
-        </label>
-        
+          <label for="habilidade-php">
+            <input
+              type="checkbox"
+              id="habilidade-php"
+              name="habilidades"
+              value="PHP"
+            />
+            PHP
+          </label>
 
-        <label for="habilidade-git">
-          <input
-            type="checkbox"
-            id="habilidade-git"
-            name="habilidades"
-            value="Git"
-          />
-          Git
-        </label>
-        
+          <label for="habilidade-sql">
+            <input
+              type="checkbox"
+              id="habilidade-sql"
+              name="habilidades"
+              value="SQL"
+            />
+            SQL
+          </label>
 
-        <label for="habilidade-github">
-          <input
-            type="checkbox"
-            id="habilidade-github"
-            name="habilidades"
-            value="GitHub"
-          />
-          GitHub
-        </label>
-        
+          <label for="habilidade-mysql">
+            <input
+              type="checkbox"
+              id="habilidade-mysql"
+              name="habilidades"
+              value="MySQL"
+            />
+            MySQL
+          </label>
 
-        <label for="habilidade-docker">
-          <input
-            type="checkbox"
-            id="habilidade-docker"
-            name="habilidades"
-            value="Docker"
-          />
-          Docker
-        </label>
-        
+          <label for="habilidade-postgresql">
+            <input
+              type="checkbox"
+              id="habilidade-postgresql"
+              name="habilidades"
+              value="PostgreSQL"
+            />
+            PostgreSQL
+          </label>
 
-        <label for="habilidade-kubernetes">
-          <input
-            type="checkbox"
-            id="habilidade-kubernetes"
-            name="habilidades"
-            value="Kubernetes"
-          />
-          Kubernetes
-        </label>
-        
+          <label for="habilidade-mongodb">
+            <input
+              type="checkbox"
+              id="habilidade-mongodb"
+              name="habilidades"
+              value="MongoDB"
+            />
+            MongoDB
+          </label>
 
-        <label for="habilidade-linux">
-          <input
-            type="checkbox"
-            id="habilidade-linux"
-            name="habilidades"
-            value="Linux"
-          />
-          Linux
-        </label>
-        
+          <label for="habilidade-git">
+            <input
+              type="checkbox"
+              id="habilidade-git"
+              name="habilidades"
+              value="Git"
+            />
+            Git
+          </label>
 
-        <label for="habilidade-api">
-          <input
-            type="checkbox"
-            id="habilidade-api"
-            name="habilidades"
-            value="APIs REST"
-          />
-          APIs REST
-        </label>
-        
+          <label for="habilidade-github">
+            <input
+              type="checkbox"
+              id="habilidade-github"
+              name="habilidades"
+              value="GitHub"
+            />
+            GitHub
+          </label>
 
-        <label for="habilidade-aws">
-          <input
-            type="checkbox"
-            id="habilidade-aws"
-            name="habilidades"
-            value="AWS"
-          />
-          AWS
-        </label>
-        
+          <label for="habilidade-docker">
+            <input
+              type="checkbox"
+              id="habilidade-docker"
+              name="habilidades"
+              value="Docker"
+            />
+            Docker
+          </label>
 
-        <label for="habilidade-figma">
-          <input
-            type="checkbox"
-            id="habilidade-figma"
-            name="habilidades"
-            value="Figma"
-          />
-          Figma
-        </label>
-        
+          <label for="habilidade-kubernetes">
+            <input
+              type="checkbox"
+              id="habilidade-kubernetes"
+              name="habilidades"
+              value="Kubernetes"
+            />
+            Kubernetes
+          </label>
 
-        <label for="habilidade-scrum">
-          <input
-            type="checkbox"
-            id="habilidade-scrum"
-            name="habilidades"
-            value="Scrum"
-          />
-          Scrum
-        </label>
-        
+          <label for="habilidade-linux">
+            <input
+              type="checkbox"
+              id="habilidade-linux"
+              name="habilidades"
+              value="Linux"
+            />
+            Linux
+          </label>
 
-        <label for="habilidade-ux">
-          <input
-            type="checkbox"
-            id="habilidade-ux"
-            name="habilidades"
-            value="UX/UI Design"
-          />
-          UX/UI Design
-        </label>
-        
+          <label for="habilidade-api">
+            <input
+              type="checkbox"
+              id="habilidade-api"
+              name="habilidades"
+              value="APIs REST"
+            />
+            APIs REST
+          </label>
 
-        <label for="habilidade-ingles">
-          <input
-            type="checkbox"
-            id="habilidade-ingles"
-            name="habilidades"
-            value="Inglês"
-          />
-          Inglês
-        </label>
-      </fieldset>
-      
-      <label for="experiencia">Quantos messes de experiencia você tem?</label>
-      <input
-        type="number"
-        id="experiencia"
-        name="experiencia"
-        placeholder="Coloque em meses"
-        required
-      />
-      <button type="submit">Gerar perfil</button>
-    </form>
-    <div id="status" aria-live="polite"></div>
-    <div id="lista-vagas"></div>
-    <!-- <div class="vaga ${destaque}" style="border-left: 5px solid ${cor}"></div> -->
+          <label for="habilidade-aws">
+            <input
+              type="checkbox"
+              id="habilidade-aws"
+              name="habilidades"
+              value="AWS"
+            />
+            AWS
+          </label>
+
+          <label for="habilidade-figma">
+            <input
+              type="checkbox"
+              id="habilidade-figma"
+              name="habilidades"
+              value="Figma"
+            />
+            Figma
+          </label>
+
+          <label for="habilidade-scrum">
+            <input
+              type="checkbox"
+              id="habilidade-scrum"
+              name="habilidades"
+              value="Scrum"
+            />
+            Scrum
+          </label>
+
+          <label for="habilidade-ux">
+            <input
+              type="checkbox"
+              id="habilidade-ux"
+              name="habilidades"
+              value="UX/UI Design"
+            />
+            UX/UI Design
+          </label>
+
+          <label for="habilidade-ingles">
+            <input
+              type="checkbox"
+              id="habilidade-ingles"
+              name="habilidades"
+              value="Inglês"
+            />
+            Inglês
+          </label>
+        </fieldset>
+
+        <label for="experiencia">Quantos messes de experiencia você tem?</label>
+        <input
+          type="number"
+          id="experiencia"
+          name="experiencia"
+          placeholder="Coloque em meses"
+        />
+        <button type="submit">Gerar perfil</button>
+        <br />
+        <br />
+        <button type="button" id="btnL">Limpar perfil</button>
+      </form>
+      <section id="status" aria-live="polite"><h2>Status</h2></section>
+      <section id="resultado">
+        <p id="contador-analises"></p>
+
+        <div id="avisos"></div>
+
+        <div id="lista-vagas" class="visible">
+          
+        </div>
+      </section>
     </main>
     <footer>
       <p>&copy; 2026 SkillMatch++. Todos os direitos reservados.</p>
     </footer>
     <script type="module" src="assets/scripts/main.js"></script>
   </body>
-</html>
-  </body>
-  <script type="module" src="assets/scripts/ui.js"></script>
 </html>
