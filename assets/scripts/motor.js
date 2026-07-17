@@ -221,6 +221,15 @@ function finalizarAnalise(nomeCandidato, callback) {
   callback(nomeCandidato);
 }
 
+export function criarContadorAnalises() {
+  let totalAnalises = 0;
+
+  return function () {
+    totalAnalises++;
+    return totalAnalises;
+  };
+}
+
 export default {
   candidatoOriginal,
   listaVagas,
