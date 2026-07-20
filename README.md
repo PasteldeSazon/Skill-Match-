@@ -1,100 +1,204 @@
-# 🚀 SkillMatch – Sistema Inteligente de Compatibilidade entre Candidatos e Vagas
+# 🚀 SkillMatch++ – Sistema Inteligente de Compatibilidade entre Candidatos e Vagas
 
 ## 📖 Sobre o projeto
 
-O **SkillMatch** é uma aplicação web desenvolvida em **HTML5, CSS3 e JavaScript puro (ES Modules)** com o objetivo de analisar o perfil de um candidato e identificar as vagas de emprego mais compatíveis com suas habilidades.
+O **SkillMatch++** é uma aplicação web desenvolvida utilizando **HTML5, CSS3 e JavaScript (ES Modules)** com o objetivo de auxiliar candidatos a identificar as vagas de emprego mais compatíveis com seu perfil profissional.
 
-O sistema recebe as informações preenchidas pelo usuário em um formulário, compara essas informações com os requisitos disponíveis em um catálogo de vagas e apresenta as oportunidades mais compatíveis, indicando a porcentagem de compatibilidade, as habilidades atendidas, as habilidades que ainda precisam ser desenvolvidas e uma recomendação personalizada para cada vaga.
+O sistema recebe as informações fornecidas pelo usuário em um formulário, compara suas habilidades com os requisitos de diversas vagas disponíveis e apresenta as oportunidades mais adequadas, exibindo uma porcentagem de compatibilidade, habilidades atendidas, habilidades que precisam ser desenvolvidas e uma recomendação personalizada.
 
-Este projeto foi desenvolvido como atividade prática do curso, aplicando conceitos fundamentais de desenvolvimento Front-end utilizando apenas tecnologias nativas da Web, sem frameworks ou bibliotecas externas.
+O projeto foi desenvolvido como atividade prática da disciplina de Desenvolvimento Web, utilizando apenas tecnologias nativas da Web, sem frameworks ou bibliotecas externas.
 
 ---
 
-# 🎯 Objetivos
+# ❗ Problema que o sistema resolve
 
-* Aplicar conceitos de HTML semântico e acessível.
-* Desenvolver interfaces responsivas utilizando CSS.
-* Utilizar JavaScript moderno com ES Modules.
-* Trabalhar com Programação Orientada a Objetos (POO).
-* Consumir dados externos utilizando Fetch API.
-* Persistir informações utilizando LocalStorage.
-* Desenvolver lógica de compatibilidade entre candidatos e vagas.
-* Organizar o código de forma modular e reutilizável.
+Encontrar uma vaga compatível com o perfil profissional pode ser uma tarefa difícil, principalmente para candidatos iniciantes.
+
+O SkillMatch++ busca resolver esse problema realizando automaticamente uma comparação entre as habilidades do candidato e os requisitos das vagas cadastradas, facilitando a identificação das melhores oportunidades e indicando quais competências ainda precisam ser desenvolvidas.
+
+---
+
+# 🎯 Objetivos do projeto
+
+- Aplicar HTML semântico e acessível.
+- Desenvolver uma interface responsiva seguindo o conceito **Mobile First**.
+- Utilizar JavaScript moderno com ES Modules.
+- Aplicar conceitos de Programação Orientada a Objetos (POO).
+- Consumir dados externos utilizando Fetch API.
+- Persistir informações utilizando LocalStorage.
+- Desenvolver lógica de compatibilidade entre candidatos e vagas.
+- Organizar o código em módulos para facilitar manutenção e reutilização.
 
 ---
 
 # ✨ Funcionalidades
 
-* Cadastro de candidato através de formulário.
-* Validação completa dos campos.
-* Carregamento das vagas através de arquivo JSON utilizando Fetch API.
-* Tratamento dos estados de carregamento, erro e lista vazia.
-* Cálculo automático da compatibilidade entre candidato e vaga.
-* Exibição das três vagas mais compatíveis.
-* Classificação automática da compatibilidade.
-* Exibição das habilidades atendidas.
-* Exibição das habilidades que ainda precisam ser desenvolvidas.
-* Recomendações de estudo para aumentar as chances de contratação.
-* Armazenamento do perfil do candidato utilizando LocalStorage.
-* Interface responsiva para dispositivos móveis e desktop.
+- Cadastro do candidato.
+- Validação completa dos campos do formulário utilizando JavaScript e Expressões Regulares (Regex).
+- Carregamento das vagas através de arquivo JSON utilizando Fetch API.
+- Tratamento de erros no carregamento das vagas.
+- Cálculo automático da compatibilidade entre candidato e vaga.
+- Ordenação automática das vagas por compatibilidade.
+- Exibição das três melhores vagas.
+- Exibição da porcentagem de compatibilidade.
+- Listagem das habilidades atendidas.
+- Listagem das habilidades faltantes.
+- Recomendação personalizada para cada vaga.
+- Persistência dos dados do candidato utilizando LocalStorage.
+- Interface responsiva para dispositivos móveis e desktop.
 
 ---
 
 # 🛠 Tecnologias utilizadas
 
-* HTML5
-* CSS3
-* JavaScript (ES6+)
-* Fetch API
-* LocalStorage
-* JSON
-* Git
-* GitHub
+- HTML5
+- CSS3 (Flexbox e Media Queries)
+- JavaScript ES6+
+- ES Modules
+- Programação Orientada a Objetos (POO)
+- Fetch API
+- LocalStorage
+- JSON
+- Git
+- GitHub
 
 ---
 
 # 📚 Conceitos de JavaScript aplicados
 
-Durante o desenvolvimento foram utilizados diversos conceitos estudados ao longo do curso, entre eles:
+Durante o desenvolvimento foram utilizados diversos conceitos estudados durante a disciplina:
 
-* Manipulação do DOM
-* Eventos
-* Funções
-* Arrow Functions
-* Template Literals
-* Objetos
-* Arrays
-* Métodos de Array (`map`, `filter`, `sort`, `slice`)
-* Callback Functions
-* Closure
-* Programação Orientada a Objetos
-* Classes
-* Herança
-* Encapsulamento
-* ES Modules (`import` e `export`)
-* Fetch API
-* Tratamento de erros (`try/catch`)
-* LocalStorage
-* JSON
+- Manipulação do DOM
+- Eventos
+- Funções
+- Arrow Functions
+- Template Literals
+- Objetos
+- Arrays
+- Métodos de Arrays (`map`, `sort`, `slice`, `forEach`)
+- Callback Functions
+- Closure
+- Classes
+- Programação Orientada a Objetos
+- Encapsulamento
+- ES Modules (`import` e `export`)
+- Fetch API
+- Async/Await
+- Try/Catch
+- Expressões Regulares (Regex)
+- LocalStorage
+- JSON
+
+---
+
+# 🧠 Funcionamento do sistema
+
+O funcionamento do SkillMatch++ ocorre em cinco etapas principais:
+
+```text
+Usuário
+    │
+    ▼
+Preenche o formulário
+    │
+    ▼
+Validação dos dados
+    │
+    ▼
+Carregamento das vagas (JSON)
+    │
+    ▼
+Motor de Compatibilidade
+    │
+    ▼
+Ordenação das vagas
+    │
+    ▼
+Exibição das 3 melhores oportunidades
+```
+
+Durante a análise o sistema calcula:
+
+- Percentual de compatibilidade.
+- Habilidades atendidas.
+- Habilidades faltantes.
+- Classificação da vaga.
+- Recomendação personalizada.
 
 ---
 
-# 🧠 Funcionamento da análise
+# 💾 Persistência dos dados
 
-O sistema realiza uma comparação entre as habilidades informadas pelo candidato e os requisitos de cada vaga disponível.
+O sistema utiliza **LocalStorage** para armazenar o perfil do candidato.
 
-Para cada vaga são calculados:
+As seguintes informações permanecem salvas mesmo após atualizar a página:
 
-* Percentual de compatibilidade.
-* Quantidade de requisitos atendidos.
-* Habilidades encontradas.
-* Habilidades faltantes.
-* Classificação da compatibilidade.
-* Recomendação personalizada.
+- Nome
+- Email
+- Telefone
+- Idade
+- Área de atuação
+- Habilidades
+- Experiência
 
-Após todos os cálculos, as vagas são ordenadas pela porcentagem de compatibilidade e são apresentadas ao usuário as três melhores oportunidades.
+Quando o usuário retorna ao sistema, os dados são recuperados automaticamente e o formulário é preenchido novamente.
 
 ---
+
+# 📱 Responsividade
+
+O projeto foi desenvolvido seguindo a abordagem **Mobile First**.
+
+Foram utilizadas:
+
+- Media Queries
+- Flexbox
+- Layout adaptativo
+- Campos responsivos
+- Interface otimizada para celulares, tablets e desktops
+
+---
+
+# 📂 Organização do projeto
+
+```text
+SkillMatch++
+│
+├── index.html
+├── style.css
+├── main.js
+├── ui.js
+├── motor.js
+├── dados.js
+├── vagas.json
+└── README.md
+```
+
+### Responsabilidade de cada módulo
+
+### `main.js`
+
+Inicializa a aplicação.
+
+### `ui.js`
+
+Responsável pela interface gráfica, validações, manipulação do DOM e renderização das vagas.
+
+### `motor.js`
+
+Contém toda a regra de negócio do sistema:
+
+- cálculo da compatibilidade;
+- recomendações;
+- contador de análises (Closure).
+
+### `dados.js`
+
+Responsável por:
+
+- carregar o arquivo JSON utilizando Fetch;
+- salvar informações no LocalStorage;
+- recuperar informações do LocalStorage.
 
 ---
 
@@ -102,57 +206,63 @@ Após todos os cálculos, as vagas são ordenadas pela porcentagem de compatibil
 
 1. Faça o download ou clone este repositório.
 
-2. Abra o projeto no Visual Studio Code.
+```bash
+git clone https://github.com/PasteldeSazon/Skill-Match-.git
+```
+
+2. Abra o projeto no **Visual Studio Code**.
 
 3. Instale a extensão **Live Server**.
 
-4. Clique com o botão direito no arquivo **index.html**.
+4. Clique com o botão direito sobre o arquivo **index.html**.
 
-5. Selecione **Open with Live Server**.
+5. Escolha **Open with Live Server**.
 
 6. Preencha o formulário e realize a análise das vagas.
 
 ---
 
-# 💾 Persistência de dados
-
-O perfil do candidato é armazenado utilizando o **LocalStorage**, permitindo que as informações sejam recuperadas posteriormente mesmo após atualizar a página.
-
----
-
-# 📱 Responsividade
-
-A interface foi desenvolvida seguindo o conceito **Mobile First**, adaptando automaticamente o layout para diferentes tamanhos de tela, proporcionando uma boa experiência tanto em dispositivos móveis quanto em computadores.
-
----
-
-# 📌 Organização do código
-
-O projeto foi dividido em módulos para facilitar a manutenção e reutilização do código.
-
-* **main.js** — inicialização da aplicação.
-* **ui.js** — interface e manipulação do DOM.
-* **motor.js** — regras de negócio e cálculo da compatibilidade.
-* **dados.js** — carregamento dos dados e manipulação do LocalStorage.
-
----
-
 # 📖 Aprendizados
 
-Durante o desenvolvimento deste projeto foi possível aplicar diversos conceitos fundamentais do desenvolvimento Front-end, principalmente organização de código, modularização, manipulação do DOM, programação orientada a objetos, consumo de APIs utilizando Fetch e persistência de dados com LocalStorage.
+Durante o desenvolvimento deste projeto foi possível colocar em prática diversos conhecimentos adquiridos na disciplina, como:
 
-Além do desenvolvimento técnico, o projeto proporcionou uma melhor compreensão sobre organização de projetos, versionamento com Git e boas práticas de programação.
+- Organização de código em módulos;
+- HTML semântico;
+- CSS responsivo;
+- Manipulação do DOM;
+- Programação Orientada a Objetos;
+- Fetch API;
+- LocalStorage;
+- Expressões Regulares;
+- Git e GitHub;
+- Organização de projetos Front-end.
 
 ---
 
 # 🚀 Melhorias futuras
 
-* Adicionar filtros por área de atuação.
-* Implementar busca por palavra-chave.
-* Adicionar tema claro e escuro.
-* Exibir gráficos com estatísticas do candidato.
-* Permitir cadastro de novas vagas pela interface.
-* Gerar relatório em PDF com os resultados da análise.
+Algumas melhorias que podem ser implementadas em versões futuras são:
+
+- Cadastro de novas vagas pela interface.
+- Painel administrativo.
+- Banco de dados.
+- Sistema de login.
+- Filtro por área de atuação.
+- Busca por palavra-chave.
+- Tema claro/escuro.
+- Exportação dos resultados em PDF.
+- Dashboard com gráficos.
+- Integração com APIs de vagas reais.
+- Sistema de favoritos.
+- Histórico das análises realizadas.
+
+---
+
+# 📌 Considerações finais
+
+O SkillMatch++ demonstra a aplicação prática de diversos conceitos fundamentais do desenvolvimento Front-end, integrando HTML, CSS e JavaScript para criar uma aplicação funcional, organizada, responsiva e modular.
+
+Além de atender aos requisitos propostos pela disciplina, o projeto reforça boas práticas de programação, reutilização de código, organização em módulos e persistência de dados no navegador.
 
 ---
 
@@ -160,4 +270,4 @@ Além do desenvolvimento técnico, o projeto proporcionou uma melhor compreensã
 
 **Gabriel Passos**
 
-Projeto desenvolvido como atividade prática do curso, aplicando os conhecimentos adquiridos durante as aulas de HTML, CSS e JavaScript.
+Projeto desenvolvido como atividade prática da disciplina de Desenvolvimento Web, aplicando os conhecimentos adquiridos em HTML5, CSS3, JavaScript, Programação Orientada a Objetos, Fetch API, LocalStorage e Git/GitHub.
